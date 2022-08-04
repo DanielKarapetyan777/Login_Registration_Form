@@ -7,13 +7,14 @@ abstract class LoginState extends Equatable {
 
   @override
   List<Object> get props => [];
-
 }
 
 class LoginInitial extends LoginState {
   List<User> user;
+  bool isUsername = true;
+  bool isPassword = true;
 
-  LoginInitial({this.user = const <User>[]});
+  LoginInitial({this.user = const <User>[],required this.isUsername,required this.isPassword});
 
   @override
   List<Object> get props => [user];

@@ -9,8 +9,9 @@ abstract class RegisterEvent extends Equatable {
 
 class RegisterUser extends RegisterEvent {
   final User user;
+  final BuildContext context;
 
-  const RegisterUser({required this.user});
+  const RegisterUser({required this.user,required this.context});
 
   @override
   List<Object> get props => [user];

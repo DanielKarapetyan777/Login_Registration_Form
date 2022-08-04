@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/widgets.dart';
 import 'package:login_registration/data/database.dart';
 import 'package:login_registration/data/models/user.dart';
 
@@ -16,7 +15,10 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
         if (event.user.password == event.user.confirmpassword) {
           users.add(event.user);
-          log('yes');
+          Navigator.pushReplacementNamed(
+            event.context,
+            '/',
+          );
         }
       },
     );

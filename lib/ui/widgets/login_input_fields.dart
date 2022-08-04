@@ -18,7 +18,8 @@ class LoginInputFields extends StatelessWidget {
           return LoginWidgets(
             controllerUsername: controllerUsername,
             controllerPassword: controllerPassword,
-            state: state,
+            isPassword: state.isPassword,
+            isUsername: state.isUsername,
           );
         }
         if (state is LoginLoading) {

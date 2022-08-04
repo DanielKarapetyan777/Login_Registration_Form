@@ -11,25 +11,30 @@ class RegistPage extends StatelessWidget {
           elevation: 0,
           backgroundColor: const Color.fromRGBO(245, 245, 245, 1),
           title: Container(
-            margin: const EdgeInsets.all(6),
-            height: 44,
-            width: 44,
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: IconButton(
-              alignment: Alignment.center,
-              icon: const Icon(Icons.arrow_back),
-              color: Colors.black,
-              onPressed: () {
-                Navigator.pushReplacementNamed(
-                  context,
-                  '/',
-                );
-              },
-              iconSize: 20,
-            ),
-          ),
+              margin: const EdgeInsets.all(6),
+              height: 44,
+              width: 44,
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(25))),
+              child: Row(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_back),
+                      color: Colors.black,
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                          context,
+                          '/',
+                        );
+                      },
+                      iconSize: 20,
+                    ),
+                  ),
+                ],
+              )),
         ),
         backgroundColor: const Color.fromRGBO(245, 245, 245, 1),
         body: const RegistInputFields());

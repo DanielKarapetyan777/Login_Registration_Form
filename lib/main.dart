@@ -5,8 +5,18 @@ import 'package:login_registration/data/bloc/register_bloc.dart';
 import 'package:login_registration/ui/pages/login_page.dart';
 import 'package:login_registration/ui/pages/regist_page.dart';
 import 'package:login_registration/ui/pages/user_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main(List<String> args) => runApp(const MyApp());
+void main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  var firstname = preferences.getString('firstname');
+  runApp(MaterialApp(
+    home: firstname == null
+        ? const MyApp()
+        : UserPage(ferstname: '', lastname: ''),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({key}) : super(key: key);
